@@ -6,8 +6,8 @@ export function List({ items }) {
       <table className="table table-hover table-borderless">
         <tbody>
           {
-            items.map(item => <ListItem item={item}/>)
-          }
+            items.map((item, index) => (<ListItem key={item + index} item={item}/>
+            ))}
         </tbody>
       </table>
     </div>

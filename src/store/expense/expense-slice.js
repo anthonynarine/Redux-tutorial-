@@ -6,6 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const expenseSlice = createSlice({
     name: "expenseSlice",
     initialState: {
+        income: 1000, 
         expenseList: [],
 
     },
@@ -19,12 +20,15 @@ export const expenseSlice = createSlice({
             console.log("action", action)
             currentSlice.expenseList.push(action.payload)
         },
+        actionSetIncome: (currentSlice, action) => {
+            currentSlice.income = action.payload
+        },
     }
 
 });
 
 
-export const { actionAddExpense } = expenseSlice.actions
+export const { actionAddExpense, actionSetIncome } = expenseSlice.actions
 
 // const actionAddExpense = expenseSlice.actions.actionAddExpense
 //destructured above
